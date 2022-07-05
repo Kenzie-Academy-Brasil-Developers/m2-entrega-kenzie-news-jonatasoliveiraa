@@ -1,13 +1,11 @@
 class Requisicao{
 
-    static async pegarDados(){
+    static pegarDados(){
 
         const url = "https://kenzie-news-api.herokuapp.com/api/news"
         
         fetch(url)
-        .then((response) => { 
-           return response.json()
-        })
+        .then(response => response.json())
         .then((response) =>{
 
             Template.secaoPrincipal(response[0])
@@ -29,7 +27,6 @@ class Template{
 
         const section = document.createElement("section") 
         section.classList.add("SectionNoticiaPrincipal")
-        section.dataset.id = noticia.id
 
         const infoNoticias = Template.divSecaoPrincipal(noticia)
         const imgNoticias = Template.imgNoticia(noticia)
@@ -55,22 +52,22 @@ class Template{
     static infoNoticias(noticia){
         const divInfo = document.createElement("div")
 
-        const h3Info = document.createElement("button")
+        const buttonInfo = document.createElement("button")
         const h1Info = document.createElement("h1")
         const pInfo = document.createElement("p")
         const spanInfo = document.createElement("span")
     
-        h3Info.classList.add("tagH3")
+        buttonInfo.classList.add("tagH3")
         h1Info.classList.add("h1TituloNoticia")
         pInfo.classList.add("pInfoNoticia")
         spanInfo.classList.add("fonte")
     
-        h3Info.innerText = noticia.categoria
+        buttonInfo.innerText = noticia.categoria
         h1Info.innerText = noticia.titulo
         pInfo.innerText = noticia.resumo
         spanInfo.innerText = `Fonte: ${noticia.fonte}`
     
-        divInfo.append(h3Info,h1Info,pInfo,spanInfo)
+        divInfo.append(buttonInfo,h1Info,pInfo,spanInfo)
         return divInfo
     }
 
@@ -137,23 +134,23 @@ class CardsNoticias{
     static infoCards(noticia){
 
         const divInfo = document.createElement("div")
-        const h4Info = document.createElement("button")
-        const h3Info = document.createElement("h1")
+        const buttonInfo = document.createElement("button")
+        const h3Info = document.createElement("h3")
         const pInfo = document.createElement("p")
         const spanInfo = document.createElement("span")
         
-        h4Info.innerText = noticia.categoria
+        buttonInfo.innerText = noticia.categoria
         h3Info.innerText = noticia.titulo
         pInfo.innerText = noticia.resumo
         spanInfo.innerText = `Fonte: ${noticia.fonte}`
         
         divInfo.classList.add("divCardsInfo")
-        h4Info.classList.add("tagH4")
+        buttonInfo.classList.add("tagH4")
         h3Info.classList.add("h3Noticia")
         pInfo.classList.add("pInfo")
         spanInfo.classList.add("fonteLi")
         
-        divInfo.append(h4Info,h3Info,pInfo,spanInfo)
+        divInfo.append(buttonInfo,h3Info,pInfo,spanInfo)
         return divInfo
     }
 }

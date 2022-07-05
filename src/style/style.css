@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 
-@media (min-width: 320px) and (max-width: 450px){
+@media (min-width: 320px) and (max-width: 425px){
 body{
     width: 100%;
 }
@@ -166,7 +166,7 @@ li{
 }
 }
 
-@media (min-width: 450px) and (max-width: 768px){
+@media (min-width: 425px) and (max-width: 768px){
     body{
         width: 100%;
     }
@@ -203,7 +203,6 @@ li{
     
     .divInfoPrincipal{
         width: 100%;
-    
         border: 1px solid #EEEEEE;
         box-shadow: 3px 3px 5px rgba(27, 28, 30, 0.1);
         height: 320px;
